@@ -1,0 +1,20 @@
+class Solution:
+    def findOriginalArray(self, changed: List[int]) -> List[int]:
+        ans = []
+        if len(changed) % 2 != 0:
+            return []
+
+        changed.sort()
+        count = Counter(changed)
+        
+        for i in changed:
+            if count[i]==0:
+                continue
+            if count[i*2]==0:
+                return []
+            ans.append(i)
+            count[i]-=1
+            count[i*2]-=1
+        return ans 
+
+
