@@ -1,7 +1,7 @@
 class Solution:
     def minSteps(self, s: str, t: str) -> int:
-        ss= Counter(sorted(s))
-        tt = Counter(sorted(t))
+        ss= Counter(s)
+        tt = Counter(t)
         if ss ==tt:
             return 0
         c=0
